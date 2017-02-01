@@ -7,23 +7,23 @@
     <!-- Opengraph -->
     <meta property="og:site_name" content="Hear Me Code">
     <meta property="og:description" content="How many days has it been since a Hear Me Code member landed a job in tech?">
-    <meta property="og:image" content="http://shannonvturner.com/images/hearmecode_logo.png">
+    <meta property="og:image" content="https://shannonvturner.com/images/hearmecode_logo.png">
     <meta property="og:title" content="Hear Me Code">
-    <meta property="og:url" content="http://hearmecode.com">
+    <meta property="og:url" content="https://hearmecode.com">
     <meta property="og:type" content="website">
 
     <!-- Twitter card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@hearmecode">
-    <meta name="twitter:creator" content="@svt827">
+    <meta name="twitter:creator" content="@svthmc">
     <meta name="twitter:title" content="Hear Me Code">
     <meta name="twitter:description" content="How many days has it been since a Hear Me Code member landed a job in tech?">
-    <meta name="twitter:image:src" content="http://shannonvturner.com/images/hearmecode.png">
-    <meta name="twitter:url" content="http://hearmecode.com">
+    <meta name="twitter:image:src" content="https://shannonvturner.com/images/hearmecode.png">
+    <meta name="twitter:url" content="https://hearmecode.com">
 
-    <link rel="shortcut icon" href="http://shannonvturner.com/images/hearmecode.ico">
+    <link rel="shortcut icon" href="https://shannonvturner.com/images/hearmecode.ico">
 
-    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <style>
 
         .main
@@ -34,11 +34,11 @@
             font-family: 'Oswald', sans-serif;
             background-color: #00A99D;
             text-align: center;
-            font-size: 2.5em;
+            font-size: 2.25em;
         }
 
         #days-container {
-            font-size: 4.8em;
+            font-size: 4.5em;
         }
 
     </style>
@@ -70,20 +70,27 @@
         </div>
 
         <div style="margin-top: 1em;">
-            Since 2015, over a dozen women credit <a href="http://hearmecode.com" style="text-decoration: underline; color: #fff;">Hear Me Code</a> with providing them the skills and experience they needed to land a tech job.
+            Since 2015, over a dozen women credit <a href="https://hearmecode.com" style="text-decoration: underline; color: #fff;">Hear Me Code</a> with providing them the skills and experience they needed to land a tech job.
         </div>
 
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 
     <script type="text/javascript">
         $( document ).ready(function() {
             var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
-            var jobAnnounced = new Date(2016,1,26); // 0 is January for some ungodly reason
+            var jobAnnounced = new Date(2017,0,31); // 0 is January for some ungodly reason
             var today = new Date();
-            var diffDays = Math.round(Math.abs((jobAnnounced.getTime() - today.getTime())/(oneDay))) - 1;
+            // var diffDays = Math.round(Math.abs((jobAnnounced.getTime() - today.getTime())/(oneDay))) - 1;
+
+            jobAnnounced = moment(jobAnnounced);
+            today = moment(today);
+            diffDays = today.diff(jobAnnounced, 'days');
+
             $("#days-container").text(diffDays);
+
         });
     </script>
 
